@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import './styles/FileUploaderStyles.css'
+import "./styles/FileUploaderStyles.css";
 
 const FileUploader = () => {
     const displayText = useRef("");
@@ -15,7 +15,7 @@ const FileUploader = () => {
             const content = e.target.result;
             displayText.current.textContent = content;
             // setting up the count of total words
-            setTotalWords(content.split(' ').length) 
+            setTotalWords(content.split(" ").length);
         };
         reader.readAsText(file);
     };
@@ -23,15 +23,17 @@ const FileUploader = () => {
     const handleSearch = () => {
         const string_to_search = searchedText.current.value;
         let regExp = new RegExp(string_to_search, "gi");
-        if (displayText.current.textContent.length > 0) { // if file text is not empty 
-            if (string_to_search == "") { // if the searched text is empty
+        if (displayText.current.textContent.length > 0) {
+            // if file text is not empty
+            if (string_to_search == "") {
+                // if the searched text is empty
 
-              // removing the previous highlighted words & updating the innerHTML
-              displayText.current.innerHTML = displayText.current.textContent.replace(
-                  regExp,
-                  "$&"
-              );
-              setTotalOccurences(0);
+                // removing the previous highlighted words & updating the innerHTML
+                displayText.current.innerHTML = displayText.current.textContent.replace(
+                    regExp,
+                    "$&"
+                );
+                setTotalOccurences(0);
             } else {
                 // replacing the searched text with the highlighted text
                 displayText.current.innerHTML = displayText.current.textContent.replace(
@@ -43,7 +45,7 @@ const FileUploader = () => {
             }
         } else {
             alert("Either your file is empty or you are trying to search without a file");
-            searchedText.current.value='';
+            searchedText.current.value = "";
         }
     };
 
@@ -51,7 +53,9 @@ const FileUploader = () => {
         <div className="container">
             <div className="file-container">
                 <input type="file" onChange={handleFileChange} />
-                <p ref={displayText} className="text-space"></p>
+                <div className="text-space">
+                    <p ref={displayText}></p>
+                </div>
             </div>
 
             <div className="searchInputs">
@@ -67,6 +71,6 @@ const FileUploader = () => {
             </div>
         </div>
     );
-}
+};
 
-export default FileUploader
+export default FileUploader;
