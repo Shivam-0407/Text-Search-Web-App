@@ -14,7 +14,6 @@ p {
 
 .file-container {
     width: 100%;
-    font-size: 20px;
     padding-top: 20px;
     text-align: justify;
     max-width: 700px;
@@ -35,6 +34,7 @@ p {
 }
 
 .searchInputs {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 2vw;
@@ -56,6 +56,21 @@ p {
 }
 
 /* JavaScript */
-mark {
+mark{
     background: yellow;
+}
+
+@media screen and (max-width: 600px) {
+    .container{
+        padding: 12vw;
+    }
+    .file-container input {
+        font-size: 12px;
+    }
+    .searchInputBox {
+        font-size: 12px;
+    }
+    p{
+        font-size: 14px;
+    }
 }
