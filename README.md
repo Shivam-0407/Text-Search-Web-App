@@ -1,7 +1,7 @@
 
 # Text-Search-Web-App ✨
 
-Ever Wondered how does a simple Text Search is being implemented where a person just type the text he/she wants to search and the text appears in highlighted format. This project is a small step towards this idea.
+Ever wondered how does a simple Text Search is being implemented where a person just type the text he/she wants to search and the text appears in highlighted format. This project is a small step towards this idea.
 
 Presenting you the Text Search Web App 📄✨: Empower users to effortlessly view and search text content within .txt files, facilitating seamless navigation and content discovery.
 
@@ -23,7 +23,9 @@ This repository contains a Vite-powered React application. Follow the instructio
 4.  **Start the Development Server** :
     ```bash
     npm run dev
-5. **Click on the link provided in your terminal for localhost**
+5. **Click on the link provided in your terminal to run it locally**
+   
+![image](https://github.com/Shivam-0407/Text-Search-Web-App/assets/126800410/1850274e-f7dc-49ca-9c93-9c10675b5b83)
 
 
 ## Demo
