@@ -6,11 +6,12 @@
     font-family: "Poppins-SemiBold";
 }
 
-p {
+p,ul,li {
     font-size: 18px;
     font-weight: 900;
     font-family: "Courier New", Courier, monospace;
 }
+
 
 .file-container {
     width: 100%;
@@ -70,7 +71,7 @@ mark{
     .searchInputBox {
         font-size: 12px;
     }
-    p{
+    p,ul,li{
         font-size: 14px;
     }
 }

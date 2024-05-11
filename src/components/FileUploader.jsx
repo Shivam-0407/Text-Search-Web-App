@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./styles/FileUploaderStyles.css";
 
 const FileUploader = () => {
@@ -6,6 +6,27 @@ const FileUploader = () => {
     const searchedText = useRef("");
     const [totalOccurences, setTotalOccurences] = useState(0);
     const [totalWords, setTotalWords] = useState(0);
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            // Check if Ctrl key is pressed along with 'f' key for search
+            if (event.ctrlKey && event.key === "f") {
+                // to prevent the default browser search behavior
+                event.preventDefault();
+
+                // To focus on the search input field
+                searchedText.current.focus();
+            }
+        };
+
+        // Attach event listener for keydown event on the Document
+        document.addEventListener("keydown", handleKeyDown);
+
+        // Clean up by removing event listener when component unmounts
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, []); // Empty dependency array ensures effect runs only once on mount
 
     // reading from the selected file
     const handleFileChange = (event) => {
@@ -22,7 +43,7 @@ const FileUploader = () => {
 
     const handleSearch = () => {
         const string_to_search = searchedText.current.value;
-        let regExp = new RegExp(string_to_search, "gi");
+        let regExp = new RegExp(string_to_search, "gi"); // "gi" means that the regular expression will search globally and ignore case sensitivity while matching.
         if (displayText.current.textContent.length > 0) {
             // if file text is not empty
             if (string_to_search == "") {
@@ -68,6 +89,9 @@ const FileUploader = () => {
                 />
                 <p>Total Occurrences: {totalOccurences}</p>
                 <p>Total Word Count: {totalWords}</p>
+                <ul>
+                    Keyboard shortcut :<li>Ctrl+f - Takes the User Directly to Search</li>
+                </ul>
             </div>
         </div>
     );
