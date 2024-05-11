@@ -90,7 +90,7 @@ const FileUploader = () => {
                 <p>Total Occurrences: {totalOccurences}</p>
                 <p>Total Word Count: {totalWords}</p>
                 <ul>
-                    Keyboard shortcut :<li>Ctrl+f - Takes the User Directly to Search</li>
+                    Keyboard shortcut :<li>Ctrl+f - Takes the User Directly to the Search Box</li>
                 </ul>
             </div>
         </div>
